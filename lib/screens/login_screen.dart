@@ -8,7 +8,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  String email = '';
+  String _email = '';
 
   @override
   Widget build(BuildContext context) {
@@ -16,19 +16,19 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[showLogo(), showEmail()],
+        children: <Widget>[_showLogo(), _showEmail()],
       )),
     );
   }
 
-  Widget showLogo() {
+  Widget _showLogo() {
     return const Image(
       image: AssetImage('assets/vehicles_logo.png'),
       width: 300,
     );
   }
 
-  Widget showEmail() {
+  Widget _showEmail() {
     return Container(
       padding: const EdgeInsets.all(20),
       child: TextField(
@@ -41,7 +41,8 @@ class _LoginScreenState extends State<LoginScreen> {
             border:
                 OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
         onChanged: (value) {
-          email = value;
+          _email = value;
+          print(_email);
         },
       ),
     );
